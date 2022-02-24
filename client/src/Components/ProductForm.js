@@ -17,9 +17,8 @@ const ProductForm = (props) => {
             price,
             description
         })
-        .then(res=>{
+        .then(res => {
             console.log(res)
-            console.log(res.data)
             console.log(res.data)
             console.log('Product Propj=',product)
             setProduct([...product, res.data])
@@ -28,8 +27,11 @@ const ProductForm = (props) => {
             // ))
 
             setTitle("")
+            console.log(title)
             setPrice("")
+            console.log(price)
             setDescription("")
+            console.log(description)
         })
         .catch(err=> console.log(err))
     }
@@ -40,15 +42,15 @@ const ProductForm = (props) => {
             <form onSubmit={submitHandler}>
                 <div>
                     <label>Title: </label>
-                    <input type="text" onChange={(e) => setTitle(e.target.value)} />
+                    <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
                 </div>
                 <div>
                     <label>Price: </label>
-                    <input type="text" onChange={(e) => setPrice(e.target.value)} />
+                    <input type="text" value={price} onChange={(e) => setPrice(e.target.value)} />
                 </div>
                 <div>
                     <label>Description: </label>
-                    <textarea rows="6" col="10" onChange={(e) => setDescription(e.target.value)} />
+                    <textarea rows="6" col="10" value={description} onChange={(e) => setDescription(e.target.value)} />
                 </div>
                 <input type="submit" value="Create Product" />
             </form>

@@ -63,7 +63,7 @@ module.exports.destroyProduct = (req, res) => {
     Product.deleteOne({_id: req.params.id})
         .then(result => {
             console.log('result')
-            res.json({result: result})
+            res.json(result)
         })
         .catch(err => {
             console.log(err)

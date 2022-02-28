@@ -35,9 +35,9 @@ module.exports.createNewProduct = (req, res) => {
             console.log(newProduct)
             res.json(newProduct)
         })
-        .catch(err => {
-            console.log(err)
-            res.json({message: 'Something went wrong.', error: err})
+        .catch((err) => {
+            console.log('Somethine went wrong while Creating a New Product...')
+            res.status(400).json(err)
         })
 }
 
@@ -52,9 +52,9 @@ module.exports.updateProduct = (req, res) => {
         console.log(updatedProduct)
         res.json({item: updatedProduct})
     })
-    .catch(err => {
-        console.log(err)
-        res.json({message: 'Something went wrong here.', error: err})
+    .catch((err) => {
+        console.log('Somethine went wrong while updating...')
+        res.status(400).json(err)
     })
 }
 

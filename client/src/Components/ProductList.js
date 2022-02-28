@@ -12,10 +12,9 @@ const ProductList = (props) => {
             .then(res => {
                 console.log(res)
                 console.log(res.data)
-                console.log(res.data)
-                console.log('Product Propj=' + product)
+                // console.log('Product Propj=' + product)
                 setProduct(res.data)
-                console.log('Product Propj=' + product)
+                // console.log('Product Propj=' + product)
             })
             .catch(err => console.log(err))
     }, [])
